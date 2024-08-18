@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>GPU 架构</title>
+      <link href="/2024/08/18/Graphics/GPU/GPU_Architecture/"/>
+      <url>/2024/08/18/Graphics/GPU/GPU_Architecture/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-ada-ad-102-gpu"><a class="markdownIt-Anchor" href="#1-ada-ad-102-gpu"></a> 1. Ada AD 102 GPU</h2><img src="/resource/article/Games101/GPU_Architecture_01.png"><p>The full AD102 GPU includes <strong>12 Graphics Processing Clusters (GPCs)</strong>, <strong>72 Texture Processing<br />Clusters (TPCs)</strong>, <strong>144 Streaming Multiprocessors (SMs)</strong>, and a 384-bit memory interface with 12<br />32-bit memory controllers.</p><h2 id="2-gpc"><a class="markdownIt-Anchor" href="#2-gpc"></a> 2. GPC</h2><img src="/resource/article/Games101/GPU_Architecture_GPC_01.png"><h2 id="smstream-multiprocessor"><a class="markdownIt-Anchor" href="#smstream-multiprocessor"></a> SM(Stream Multiprocessor)</h2><img height="500" align="right" src="/resource/article/Games101/GPU_Architecture_SM_01.png"><ul><li><p>PolyMorph Engine: 多边形变形引擎，主要用于处理多边形和顶点相关的工作</p></li><li><p>Core：用于执行各种各样的渲染指令，图形渲染的运算核心，又叫 SP(stream processor)</p></li><li><p>warp scheduler：用于调度 Core，以最大限度的利用渲染核心</p></li><li><p>Instruction Cache：每一个渲染核心执行的指令是一样的。指令都是从指令缓冲中读取，通过 Dispatch Unit 分配到每一个Core 上面。</p></li><li><p>SFU：特殊运算单元。主要用来执行一些高阶的数学运算。如：指数，对数，三角函数等。</p></li><li><p>LD/ST：加载或保存临时数据、寄存器数据的一些模块。</p></li><li><p>Register File：存储数据的缓存区。这里的数据访问速度是最快的。</p></li><li><p>L1 Cache: 数据访问速度慢于 Register File，但容量更大。</p></li><li><p>Uniform Cache：全局统一缓存。</p></li><li><p>Tex unit：纹理采样单元。在 Fermi 机构下，一个 SM 有 4 个纹理采样的单元，每个单元有 4 个通道。我们刚好可以采样 16 个通道的数据。这也是为什么有的显卡会限制你在一个shader里面只能使用16个采样器的原因。</p></li><li><p>Texture Cache：纹理缓存</p></li><li><p>Interconnect Network：链接各个核心之间的网络。帮助核心之间数据的交换。</p></li></ul><h2 id="3-gpu内存架构"><a class="markdownIt-Anchor" href="#3-gpu内存架构"></a> 3. GPU内存架构</h2><img src="/resource/article/Games101/GPC_Architecture_memory_01.png"><h2 id="4-gpu机构和渲染管线"><a class="markdownIt-Anchor" href="#4-gpu机构和渲染管线"></a> 4. GPU机构和渲染管线</h2><img src="/resource/article/Games101/GPC_Architecture_memory_02.png">]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Data structures</title>
       <link href="/2024/08/17/Cpp/dataStructure/"/>
       <url>/2024/08/17/Cpp/dataStructure/</url>
